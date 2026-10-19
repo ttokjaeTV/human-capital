@@ -29,7 +29,9 @@ function hcSim(p) {
       A = s >= 0 ? A * (1 + p.d) + s / 12 * annuity12(m) : Math.max(0, A + s) * (1 + p.d);
     }
   }
-  const cross = path.find(x => x.t > 0 && x.A >= x.H && x.H > 0) || null;
+  // 역전: 지금(t=0) 이미 금융자산 ≥ 인적자본이면 already(소득 0이라 인적자본이 0인 경우 포함), 아니면 처음 앞지르는 해(은퇴 시점 H=0은 제외)
+  const cross = N > 0 && path[0].A >= path[0].H && path[0].A > 0 ? { ...path[0], already: true }
+    : path.find(x => x.t > 0 && x.A >= x.H && x.H > 0) || null;
   return { rows, hc, nominal, pvSave, nomSave, path, cross, N, last: rows.length ? rows[rows.length - 1].inc : 0 };
 }
 if (typeof module !== 'undefined') module.exports = { hcSim, pvYearFactor, annuity12 };
