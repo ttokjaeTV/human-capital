@@ -86,7 +86,7 @@
         <label class="label" for="disc">할인율 (연)</label>
         <div class="input-wrap"><input type="text" inputmode="decimal" id="disc" value="6"><span class="input-unit">%</span></div>
         <div class="chips" id="disc-chips">
-          <button type="button" class="chip" data-v="2.5">물가만 반영 2.5%<small>오늘 돈 가치로만 보기</small></button>
+          <button type="button" class="chip" data-v="2.5">물가만 반영 2.5%<small>오늘 돈 가치로만 보기</small></button> <!-- rules-ok: 물가 가정 기본값(제도 아님) -->
           <button type="button" class="chip" data-v="3.5">안전자산 3.5%<small>예금·국채 수준</small></button>
           <button type="button" class="chip" data-v="6">장기 투자 6%<small>주식 비중 높은 운용</small></button>
         </div>
@@ -106,7 +106,7 @@
     <div class="grid-3">
       <div><label class="label" for="spend">월 생활비</label><div class="input-wrap"><input type="text" inputmode="numeric" id="spend" data-man value="350"><span class="input-unit">만원</span></div><div class="input-hint">해마다 물가만큼 늘어요</div></div>
       <div><label class="label" for="assets">현재 금융자산</label><div class="input-wrap"><input type="text" inputmode="numeric" id="assets" data-man value="40,000"><span class="input-unit">만원</span></div><div class="input-hint">집 제외 · 예금·투자·연금계좌 합계</div></div>
-      <div><label class="label" for="inf">물가상승률 (연)</label><div class="input-wrap"><input type="text" inputmode="decimal" id="inf" value="2.5"><span class="input-unit">%</span></div><div class="input-hint">차트를 오늘 돈 가치로 볼 때 씁니다</div></div>
+      <div><label class="label" for="inf">물가상승률 (연)</label><div class="input-wrap"><input type="text" inputmode="decimal" id="inf" value="2.5"><span class="input-unit">%</span></div><div class="input-hint">차트를 오늘 돈 가치로 볼 때 씁니다</div></div> <!-- rules-ok: 물가 가정 기본값(제도 아님) -->
     </div>
     <p class="note">금융자산은 할인율과 같은 연 수익률로 불어난다고 봅니다 — 할인율을 "굴릴 수 있는 수익률"로 정했으니 같은 숫자를 쓰는 게 앞뒤가 맞아요.</p>
   </div>
