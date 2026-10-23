@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<script src="https://ttokjaetv.github.io/member-lock.js"></script>
+<script src="https://ttokjaetv.github.io/profile-v1.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>미래 소득 현재가치 계산기 · 똑재TV</title>
 <meta name="description" content="은퇴할 때까지 앞으로 벌 돈이 지금 돈으로 얼마인지(인적자본) 계산하고, 지금 금융자산과 합친 생애 총자산과 금융자산이 인적자본을 앞지르는 나이를 보여 주는 무료 계산기.">
@@ -62,6 +64,8 @@
     <button type="button" class="tool-btn" id="reset-btn">처음 값으로</button>
     <a href="#result" class="tool-btn ghost">결과 보기 ↓</a>
   </div>
+
+  <div id="tj-profile"></div>
 
   <!-- STEP 01 -->
   <div class="card">
@@ -397,6 +401,9 @@ $('csv-btn').addEventListener('click', () => {
   else { try { o = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) { o = null; } }
   if (o) apply(o);
   render();
+  /* 내 정보(다른 노후 계산기와 같이 쓰는 값) 채우기·저장 — 허브 profile-v1.js */
+  if (window.TJProfile) TJProfile.attach({ map: {
+    'age': 'age', 'retire': 'retireAge', 'income': 'income', 'spend': 'spend', 'assets': 'fin', 'inf': 'inflation' } });
 })();
 </script>
 </body>
